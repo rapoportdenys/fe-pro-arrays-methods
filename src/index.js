@@ -72,12 +72,16 @@ const minPriceReducer = () => {
   //   return currentValue;
   // }).price;
 
-  let arrPrice = goods.reduce((prev, { price }) => {
-    prev.push(price);
-    return prev;
-  }, []);
+  return goods.reduce((initialValue, currentValue) => {
+    return Math.min(initialValue, currentValue.price);
+  }, -Infinity);
 
-  return Math.min.apply(null, arrPrice);
+  // let arrPrice = goods.reduce((prev, { price }) => {
+  //   prev.push(price);
+  //   return prev;
+  // }, []);
+
+  // return Math.min.apply(null, arrPrice);
 
   // let min = goods[0].price;
   // for (let item of goods) {
@@ -104,12 +108,16 @@ const maxPriceReducer = () => {
   // }
   // return max;
 
-  let arrPrice = goods.reduce((prev, { price }) => {
-    prev.push(price);
-    return prev;
-  }, []);
+  return goods.reduce((initialValue, currentValue) => {
+    return Math.max(initialValue, currentValue.price);
+  }, -Infinity);
 
-  return Math.max.apply(null, arrPrice);
+  // let arrPrice = goods.reduce((prev, { price }) => {
+  //   prev.push(price);
+  //   return prev;
+  // }, []);
+
+  // return Math.max.apply(null, arrPrice);
 };
 
 const toMaxSorter = () => {
