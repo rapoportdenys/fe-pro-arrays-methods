@@ -74,7 +74,7 @@ const minPriceReducer = () => {
 
   return goods.reduce((initialValue, currentValue) => {
     return Math.min(initialValue, currentValue.price);
-  }, -Infinity);
+  }, Infinity);
 
   // let arrPrice = goods.reduce((prev, { price }) => {
   //   prev.push(price);
